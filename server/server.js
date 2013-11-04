@@ -1,8 +1,3 @@
-
-/**
- * Module dependencies
- */
-
 var express = require('express'),
     routes = require('./routes'),
     api = require('./routes/api'),
@@ -41,10 +36,6 @@ app.get('/', routes.index);
 app.get('/api/name', api.name);
 
 app.get('*', routes.index);
-
-/**
- * Start Server
- */
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
