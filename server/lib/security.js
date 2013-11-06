@@ -1,45 +1,62 @@
 var passport = require('passport');
 var mongoStrategy = require('./mongo-strategy');
 
-var filterUser = function(user) {
-    if ( user ) {
-        return {
-            user : {
-                id: user._id.$oid,
-                email: user.email,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                admin: user.admin
+var formatResponse = function (user) {
+
+    var result = null;
+
+    if (user) {
+        result = {
+            success: true,
+            user: {
+                id: response._id.$oid,
+                email: response.email,
+                firstName: response.firstName,
+                lastName: response.lastName,
+                admin: response.admin
             }
         };
-    } else {
-        return { user: null };
     }
-};
+    else {
+        result = {
+            success: false,
+            user: null
+        };
+    }
 
+    return result;
+};
 
 var security = {
     initialize: function(url, apiKey, dbName, authCollection) {
         passport.use(new mongoStrategy(url, apiKey, dbName, authCollection));
     },
+
     login: function(req, res, next) {
 
-        return passport.authenticate(mongoStrategy.name, authenticationFailed)(req, res, next);
+        //taken from http://passportjs.org/guide/authenticate/
 
-        function authenticationFailed(err, user, info){
+        return passport.authenticate(mongoStrategy.name,
+            function (err, user, info) {
 
-            if (err) { return next(err); }
+                // failure path
+                if (err) {
+                    return next(err);
+                }
+                if (!user) {
+                    return res.json(formatResponse(user));
+                }
 
-            if (!user) { return res.json(filterUser(user)); }
+                //success path
+                req.logIn(user, function (err) {
 
-            req.logIn(user, function(err) {
+                    if (err) {return next(err);}
 
-                if ( err ) { return next(err); }
-                return res.json(filterUser(user));
+                    return res.json(formatResponse(user));
 
-            });
-        };
+                });
 
+            })(req, res, next);
     },
     logout: function(req, res, next) {
         req.logout();

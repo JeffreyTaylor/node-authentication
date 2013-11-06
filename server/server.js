@@ -2,13 +2,11 @@ var express = require('express'),
     http = require('http'),
     path = require('path'),
     passport = require('passport'),
-    mongoProxy = require('./lib/mongo-proxy'),
     routes = require('./routes'),
     api = require('./routes/api'),
     security = require('./lib/security'),
     config = require('./config')
 
-require('express-namespace');
 
 
 var app = express();
@@ -29,12 +27,6 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-
-app.namespace('/databases/:db/collections/:collection*', function() {
-    // Proxy database calls to the MongoDB
-    app.all('/', mongoProxy(config.mongo.dbUrl, config.mongo.apiKey));
-});
-
 
 // development only
 if (app.get('env') === 'development') {
