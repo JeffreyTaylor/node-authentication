@@ -1,0 +1,50 @@
+var passport = require('passport');
+var mongoStrategy = require('./mongo-strategy');
+
+var filterUser = function(user) {
+    if ( user ) {
+        return {
+            user : {
+                id: user._id.$oid,
+                email: user.email,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                admin: user.admin
+            }
+        };
+    } else {
+        return { user: null };
+    }
+};
+
+
+var security = {
+    initialize: function(url, apiKey, dbName, authCollection) {
+        passport.use(new mongoStrategy(url, apiKey, dbName, authCollection));
+    },
+    login: function(req, res, next) {
+
+        return passport.authenticate(mongoStrategy.name, authenticationFailed)(req, res, next);
+
+        function authenticationFailed(err, user, info){
+
+            if (err) { return next(err); }
+
+            if (!user) { return res.json(filterUser(user)); }
+
+            req.logIn(user, function(err) {
+
+                if ( err ) { return next(err); }
+                return res.json(filterUser(user));
+
+            });
+        };
+
+    },
+    logout: function(req, res, next) {
+        req.logout();
+        res.send(204);
+    }
+};
+
+module.exports = security;

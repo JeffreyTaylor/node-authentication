@@ -4,16 +4,25 @@
     <list default="true" id="27723680-cf78-4847-97f4-cfdb114c0637" name="Default" comment="" />
     <ignored path="events-app.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383532483013" ignored="false" />
+    <file path="/index.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383701919037" ignored="false" />
     <file path="$PROJECT_DIR$/../../angular-app-master/client/src/app/projectsinfo/list.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383488481363" ignored="false" />
     <file path="/list.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383488469800" ignored="false" />
     <file path="/home.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383488479432" ignored="false" />
     <file path="/home.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383525404496" ignored="false" />
-    <file path="/app.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383532547262" ignored="false" />
+    <file path="/app.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383698992658" ignored="false" />
     <file path="/appFile.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383525331747" ignored="false" />
     <file path="/api.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383526589758" ignored="false" />
     <file path="/index.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383528015682" ignored="false" />
-    <file path="/header.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383532505565" ignored="false" />
+    <file path="/header.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383698699638" ignored="false" />
+    <file path="/loginController.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383698955013" ignored="false" />
+    <file path="/login.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383699341064" ignored="false" />
+    <file path="/login.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383702128198" ignored="false" />
+    <file path="/security.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383701818098" ignored="false" />
+    <file path="/server.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383701665106" ignored="false" />
+    <file path="/mongo-strategy.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383700776096" ignored="false" />
+    <file path="$PROJECT_DIR$/../../angular-app-master/server/lib/security.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383701211805" ignored="false" />
+    <file path="/config.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383701563090" ignored="false" />
+    <file path="$PROJECT_DIR$/../../angular-app-master/server/lib/initDB.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383702489037" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +42,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header.tpl.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/header.tpl.html">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="32" selection-start="98" selection-end="98" vertical-scroll-proportion="-1.7727273">
+            <state line="4" column="23" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -45,25 +54,52 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="24" selection-start="533" selection-end="533" vertical-scroll-proportion="-10.636364">
+            <state line="28" column="149" selection-start="804" selection-end="804" vertical-scroll-proportion="-16.545454">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/package.json">
+      <file leaf-file-name="login.tpl.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/security/login.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="25" selection-start="113" selection-end="113" vertical-scroll-proportion="0.107615896">
+            <state line="6" column="140" selection-start="215" selection-end="215" vertical-scroll-proportion="-3.5454545">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/server.js">
+      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/security/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="37" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
+            <state line="15" column="12" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/lib/security.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="35" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mongo-strategy.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/lib/mongo-strategy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="49" selection-start="289" selection-end="289" vertical-scroll-proportion="0.16613418">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/security/security.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="48" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -79,22 +115,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/vendor/angular/angular-route.js" />
-        <option value="$PROJECT_DIR$/client/src/app/home/home.tpl.html" />
-        <option value="$PROJECT_DIR$/server/routes/user.js" />
-        <option value="$PROJECT_DIR$/server/lib/xsrf.js" />
-        <option value="$PROJECT_DIR$/server/config.js" />
-        <option value="$PROJECT_DIR$/server/lib/routes/appFile.js" />
-        <option value="$PROJECT_DIR$/server/lib/routes/static.js" />
-        <option value="$PROJECT_DIR$/server/routes/api.js" />
-        <option value="$PROJECT_DIR$/server/routes/index.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/home.js" />
         <option value="$PROJECT_DIR$/server/app.js" />
-        <option value="$PROJECT_DIR$/client/src/app/header.tpl.html" />
-        <option value="$PROJECT_DIR$/client/src/app/app.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/client/src/index.html" />
         <option value="$PROJECT_DIR$/server/package.json" />
+        <option value="$PROJECT_DIR$/client/src/app/header.tpl.html" />
+        <option value="$PROJECT_DIR$/client/src/app/security/loginController.js" />
+        <option value="$PROJECT_DIR$/client/src/app/app.js" />
+        <option value="$PROJECT_DIR$/client/src/app/security/login.tpl.html" />
+        <option value="$PROJECT_DIR$/server/routes/security.js" />
+        <option value="$PROJECT_DIR$/server/lib/mongo-strategy.js" />
+        <option value="$PROJECT_DIR$/server/lib/mongo-proxy.js" />
+        <option value="$PROJECT_DIR$/server/config.js" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/client/src/app/security/security.js" />
+        <option value="$PROJECT_DIR$/client/src/index.html" />
+        <option value="$PROJECT_DIR$/server/lib/security.js" />
+        <option value="$PROJECT_DIR$/client/src/app/security/login.js" />
       </list>
     </option>
   </component>
@@ -163,11 +199,77 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="security" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -193,8 +295,8 @@
       <recent name="$PROJECT_DIR$/client/vendor/angular" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src" />
       <recent name="$PROJECT_DIR$/server/lib" />
+      <recent name="$PROJECT_DIR$/client/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/client/src/app" />
     </key>
@@ -237,14 +339,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="false" />
+    <frame x="55" y="22" width="1280" height="774" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18297534" sideWeight="0.6712538" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18297534" sideWeight="0.6712538" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -319,41 +421,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="70" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/vendor/angular/angular-route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="837" column="60" selection-start="35247" selection-end="35247" vertical-scroll-proportion="12.2046585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/vendor/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19140" column="233" selection-start="805128" selection-end="805128" vertical-scroll-proportion="177.61398">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="86" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
@@ -361,60 +428,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/server/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="69" selection-end="69" vertical-scroll-proportion="0.06210191">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="2" selection-start="122" selection-end="122" vertical-scroll-proportion="0.1656051">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="290" selection-end="290" vertical-scroll-proportion="0.22770701">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="99" selection-start="376" selection-end="376" vertical-scroll-proportion="0.33226836">
+        <state line="9" column="37" selection-start="148" selection-end="148" vertical-scroll-proportion="-5.318182">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/header.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="32" selection-start="98" selection-end="98" vertical-scroll-proportion="-1.7727273">
+        <state line="2" column="37" selection-start="91" selection-end="91" vertical-scroll-proportion="0.04304636">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="36" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/login.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="140" selection-start="215" selection-end="215" vertical-scroll-proportion="-3.5454545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="1" selection-end="69" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="2" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/mongo-proxy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="65" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="23" selection-start="533" selection-end="533" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
+        <state line="28" column="10" selection-start="922" selection-end="922" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="23" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="24" selection-start="533" selection-end="533" vertical-scroll-proportion="-10.636364">
+        <state line="28" column="149" selection-start="804" selection-end="804" vertical-scroll-proportion="-16.545454">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/package.json">
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/security.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="113" selection-end="113" vertical-scroll-proportion="0.107615896">
+        <state line="5" column="48" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/security.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="35" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="12" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/mongo-strategy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="49" selection-start="289" selection-end="289" vertical-scroll-proportion="0.16613418">
           <folding />
         </state>
       </provider>

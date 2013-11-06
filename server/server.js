@@ -1,8 +1,14 @@
 var express = require('express'),
+    http = require('http'),
+    path = require('path'),
+    passport = require('passport'),
+    mongoProxy = require('./lib/mongo-proxy'),
     routes = require('./routes'),
     api = require('./routes/api'),
-    http = require('http'),
-    path = require('path');
+    security = require('./lib/security'),
+    config = require('./config')
+
+require('express-namespace');
 
 
 var app = express();
@@ -12,12 +18,23 @@ app.use(express.static(path.join(__dirname, '../client/src/')));
 app.set('views', path.join(__dirname, '../client/src/'));
 app.engine('html', require('ejs').renderFile);
 
+app.use(passport.initialize());
+app.use(passport.session());
+
+security.initialize(config.mongo.dbUrl, config.mongo.apiKey, config.security.dbName, config.security.usersCollection); // Add a Mongo strategy for handling the authentication
+
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || config.server.listenPort);
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
+
+app.namespace('/databases/:db/collections/:collection*', function() {
+    // Proxy database calls to the MongoDB
+    app.all('/', mongoProxy(config.mongo.dbUrl, config.mongo.apiKey));
+});
+
 
 // development only
 if (app.get('env') === 'development') {
@@ -34,6 +51,10 @@ app.get('/', routes.index);
 
 // JSON API
 app.get('/api/name', api.name);
+
+//security
+app.post('/login', security.login);
+
 
 app.get('*', routes.index);
 

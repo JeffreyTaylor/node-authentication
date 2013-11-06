@@ -1,7 +1,8 @@
 angular.module('app',
     [
         'ngRoute',
-        'home'
+        'home',
+        'security.login'
     ]);
 
 
@@ -26,6 +27,11 @@ angular.module('app').controller('HeaderController', ['$scope', '$location',
 
             $location.path('/home');
         };
+
+
+        // to be moved..
+
+
 
     }]);
 
