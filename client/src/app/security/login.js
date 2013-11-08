@@ -13,8 +13,13 @@ angular.module('security.login')
 
         $scope.login = function () {
 
-            var result = security.login($scope.user.username, $scope.user.password);
-            console.log(result);
+            security.login($scope.user.username, $scope.user.password)
+                .then(function (result) {
+
+                    console.log('login');
+                    console.log(result);
+
+                });
 
         };
 

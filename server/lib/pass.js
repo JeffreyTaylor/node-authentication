@@ -14,7 +14,6 @@ passport.deserializeUser(function(id, done) {
 
 passport.use(new LocalStrategy(function(username, password, done) {
 
-
     db.userModel.findOne({ username: username }, function(err, user) {
 
         if (err) { return done(err); }
@@ -23,11 +22,9 @@ passport.use(new LocalStrategy(function(username, password, done) {
 
         console.log('user retrieved from database is ' + user);
 
-
         user.comparePassword(password, user, function(err, isMatch) {
 
             if (err) return done(err);
-
 
             if(isMatch) {
                 console.log('done -- passwords match');
@@ -41,7 +38,7 @@ passport.use(new LocalStrategy(function(username, password, done) {
     });
 }));
 
-// Simple route middleware to ensure user is authenticated.  Otherwise send to login page.
+// Simple route middleware to ensure user is authenticated.
 exports.ensureAuthenticated = function ensureAuthenticated(req, res, next) {
 
     if (req.isAuthenticated()) { return next(); }
@@ -58,4 +55,5 @@ exports.ensureAdmin = function ensureAdmin(req, res, next) {
         else
             res.send(403);
     }
+
 }

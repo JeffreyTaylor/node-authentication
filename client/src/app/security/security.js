@@ -1,35 +1,44 @@
 angular.module('security.service', []);
 
 angular.module('security.service')
-    .factory('security', ['$http',
-        function($http) {
+    .factory('security', ['$http', '$q',
+        function ($http, $q) {
 
-        var _currentUser = null;
+            var _currentUser = null;
 
-        var service = {
+            var service = {
 
-            login: function(username, password) {
+                login: function (username, password) {
 
-                var request = $http.post('/login', {username: username, password: password});
+                    var dfd = $q.defer();
 
-                request.then(function (response) {
+                    $http.post('/login', {username: username, password: password})
+                        .success(function (response, status, headers, config) {
 
-                    _currentUser = response.data.user;
+                            _currentUser = response.user;
 
-                    console.log(response);
+                            dfd.resolve(response.user);
 
-                   return response.data.user;
+                        })
+                        .error(function (response, status, headers, config) {
 
-                });
+                            console.log('error posting to /login');
+                            dfd.resolve(errors);
 
-            },
+                        });
 
-            logout: function(redirectTo) {
-                $http.post('/logout').then(function() {
-                    _currentUser = null;
-                });
-            }
-        };
+                    return dfd.promise;
 
-        return service;
-    }]);
+                },
+
+                logout: function () {
+
+                    $http.post('/logout').then(function () {
+                        _currentUser = null;
+                    });
+
+                }
+            };
+
+            return service;
+        }]);

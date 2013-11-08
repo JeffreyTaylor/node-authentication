@@ -29,7 +29,6 @@ exports.postlogin = function(req, res, next) {
         if (err) { return next(err) }
 
         if (!user) {
-            req.session.messages =  [info.message];
 
             return res.json({user: null, error: info.message});
         }
@@ -38,7 +37,7 @@ exports.postlogin = function(req, res, next) {
 
             if (err) { return next(err); }
 
-            return res.json({user: user});
+            return res.json({data: info, user: user});
 
         });
     })(req, res, next);

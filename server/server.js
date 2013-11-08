@@ -7,12 +7,8 @@ var express = require('express'),
     user_routes = require('./routes/user'),
     api = require('./routes/api'),
     routes = require('./routes/index'),
-    config = require('./config/config')
+    config = require('./config/config');
 
-
-
-
-var app = express();
 
 //configuration
 app.use(express.static(path.join(__dirname, '../client/src/')));
@@ -22,8 +18,8 @@ app.engine('html', require('ejs').renderFile);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use( express.cookieParser() );
-app.use(express.session({secret:'thisismysupersecret'}));
-// all environments
+app.use(express.session({secret:'secretkey123'}));
+
 app.set('port', config.server.listenPort);
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -42,18 +38,17 @@ if (app.get('env') === 'production') {
 
 // Routes
 app.get('/', routes.index);
+app.get('/account', pass.ensureAuthenticated, user_routes.account);
+app.get('/admin', pass.ensureAuthenticated, pass.ensureAdmin(), user_routes.admin);
 
 // JSON API
 app.get('/api/id', api.id);
 
-//user.js
-app.get('/account', pass.ensureAuthenticated, user_routes.account);
-app.get('/login', user_routes.getlogin);
+//authentication
 app.post('/login', user_routes.postlogin);
-app.get('/admin', pass.ensureAuthenticated, pass.ensureAdmin(), user_routes.admin);
 app.get('/logout', user_routes.logout);
 
-
+//everything else:
 app.get('*', routes.index);
 
 http.createServer(app).listen(app.get('port'), function () {
