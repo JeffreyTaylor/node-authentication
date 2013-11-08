@@ -1,30 +1,34 @@
-var passport = require('passport')
-    , LocalStrategy = require('passport-local').Strategy
-    , db = require('../config/dbSchema');
+var passport = require('passport'),
+    localStrategy = require('passport-local').Strategy,
+    db = require('../config/dbSchema');
 
 passport.serializeUser(function(user, done) {
+
     done(null, user.id);
+
 });
 
 passport.deserializeUser(function(id, done) {
-    db.userModel.findById(id, function (err, user) {
-        done(err, user);
+
+    db.userModel.findById(id, function (error, user) {
+        done(error, user);
     });
+
 });
 
-passport.use(new LocalStrategy(function(username, password, done) {
+passport.use(new localStrategy(function(username, password, done) {
 
-    db.userModel.findOne({ username: username }, function(err, user) {
+    db.userModel.findOne({ username: username }, function(error, user) {
 
-        if (err) { return done(err); }
+        if (error) { return done(error); }
 
         if (!user) { return done(null, false, { message: 'Unknown user ' + username }); }
 
         console.log('user retrieved from database is ' + user);
 
-        user.comparePassword(password, user, function(err, isMatch) {
+        user.comparePassword(password, user, function(error, isMatch) {
 
-            if (err) return done(err);
+            if (error) return done(error);
 
             if(isMatch) {
                 console.log('done -- passwords match');
@@ -38,22 +42,29 @@ passport.use(new LocalStrategy(function(username, password, done) {
     });
 }));
 
-// Simple route middleware to ensure user is authenticated.
-exports.ensureAuthenticated = function ensureAuthenticated(req, res, next) {
 
-    if (req.isAuthenticated()) { return next(); }
-    return res.json({error: 'not authenticated'});
+exports.ensureAuthenticated = function ensureAuthenticated(request, response, next) {
+
+    if (request.isAuthenticated()) { return next(); }
+
+    return response.json({error: 'not authenticated'});
 
 }
 
-exports.ensureAdmin = function ensureAdmin(req, res, next) {
+exports.ensureAdmin = function ensureAdmin(request, response, next) {
 
-    return function(req, res, next) {
-        console.log(req.user);
-        if(req.user && req.user.admin === true)
+    return function(request, response, next) {
+
+        if(request.user && request.user.admin === true) {
+
             next();
-        else
-            res.send(403);
+
+        }
+        else {
+
+            response.send(403);
+
+        }
     }
 
 }

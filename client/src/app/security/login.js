@@ -4,12 +4,10 @@ angular.module('security.login', ['security.service']);
 angular.module('security.login')
     .controller('loginController', ['$scope', 'security', function($scope, security) {
 
-
         $scope.user = {
             username: null,
             password: null
         };
-
 
         $scope.login = function () {
 
@@ -20,8 +18,6 @@ angular.module('security.login')
                     console.log(result);
 
                 });
-
         };
-
 
     }]);

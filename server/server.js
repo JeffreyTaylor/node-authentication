@@ -4,9 +4,10 @@ var express = require('express'),
     path = require('path'),
     passport = require('passport'),
     pass = require('./lib/pass'),
-    user_routes = require('./routes/user'),
+    auth = require('./routes/authentication'),
+    restricted = require('./routes/restricted'),
     api = require('./routes/api'),
-    routes = require('./routes/index'),
+    index = require('./routes/index'),
     config = require('./config/config');
 
 
@@ -36,20 +37,22 @@ if (app.get('env') === 'production') {
     // TODO
 };
 
-// Routes
-app.get('/', routes.index);
-app.get('/account', pass.ensureAuthenticated, user_routes.account);
-app.get('/admin', pass.ensureAuthenticated, pass.ensureAdmin(), user_routes.admin);
+// index
+app.get('/', index.index);
+
+//authentication
+app.post('/login', auth.postlogin);
+app.get('/logout', auth.logout);
+
+//restricted
+app.get('/account', pass.ensureAuthenticated, restricted.account);
+app.get('/admin', pass.ensureAuthenticated, pass.ensureAdmin, restricted.admin);
 
 // JSON API
 app.get('/api/id', api.id);
 
-//authentication
-app.post('/login', user_routes.postlogin);
-app.get('/logout', user_routes.logout);
-
 //everything else:
-app.get('*', routes.index);
+app.get('*', index.index);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

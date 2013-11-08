@@ -21,17 +21,10 @@ angular.module('app').controller('AppController', ['$scope',
 angular.module('app').controller('HeaderController', ['$scope', '$location',
     function ($scope, $location) {
 
-        $scope.location = $location;
-
         $scope.home = function () {
 
             $location.path('/home');
         };
-
-
-        // to be moved..
-
-
 
     }]);
 

@@ -1,3 +1,3 @@
-exports.index = function(req, res) {
-    res.render('index.html', { user: req.user });
+exports.index = function(request, response) {
+    response.render('index.html', { user: request.user });
 };

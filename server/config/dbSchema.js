@@ -4,14 +4,15 @@ var mongoose = require('mongoose'),
 
 exports.mongoose = mongoose;
 
-var uristring = config.mongo.dbLocal;
+var uriString = config.mongo.dbLocal;
 var mongoOptions = { db: { safe: true }};
 
-mongoose.connect(uristring, mongoOptions, function (err, res) {
-    if (err) {
-        console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+mongoose.connect(uriString, mongoOptions, function (error, response) {
+
+    if (error) {
+        console.log ('ERROR connecting to: ' + uriString + '. ' + error);
     } else {
-        console.log ('Successfully connected to: ' + uristring);
+        console.log ('Successfully connected to: ' + uriString);
     }
 });
 
@@ -32,7 +33,7 @@ var userSchema = new Schema({
 // to do, add decryption.
 // as a prerequisite, though, encrypted passwords need to be
 // stored in database
-userSchema.methods.comparePassword = function(candidatePassword, user, callback) {
+userSchema.methods.comparePassword = function(candidatePassword, user, done) {
 
     console.log('comparing passwords');
     var isMatch = false;
@@ -44,7 +45,7 @@ userSchema.methods.comparePassword = function(candidatePassword, user, callback)
 
     }
 
-    return callback(null, isMatch);
+    return done(null, isMatch);
 
 };
 
