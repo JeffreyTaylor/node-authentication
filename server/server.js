@@ -1,11 +1,13 @@
 var express = require('express'),
+    app = express(),
     http = require('http'),
     path = require('path'),
     passport = require('passport'),
-    routes = require('./routes'),
+    pass = require('./lib/pass'),
+    user_routes = require('./routes/user'),
     api = require('./routes/api'),
-    security = require('./lib/security'),
-    config = require('./config')
+    config = require('./config/config')
+
 
 
 
@@ -18,11 +20,9 @@ app.engine('html', require('ejs').renderFile);
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-security.initialize(config.mongo.dbUrl, config.mongo.apiKey, config.security.dbName, config.security.usersCollection); // Add a Mongo strategy for handling the authentication
-
+app.use(express.session({ secret: 'secret key' }));
 // all environments
-app.set('port', process.env.PORT || config.server.listenPort);
+app.set('port', config.server.listenPort);
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
@@ -44,8 +44,12 @@ app.get('/', routes.index);
 // JSON API
 app.get('/api/name', api.name);
 
-//security
-app.post('/login', security.login);
+//user.js
+pp.get('/account', pass.ensureAuthenticated, user_routes.account);
+app.get('/login', user_routes.getlogin);
+app.post('/login', user_routes.postlogin);
+app.get('/admin', pass.ensureAuthenticated, pass.ensureAdmin(), user_routes.admin);
+app.get('/logout', user_routes.logout);
 
 
 app.get('*', routes.index);
