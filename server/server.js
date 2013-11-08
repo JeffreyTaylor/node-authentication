@@ -17,8 +17,7 @@ app.set('views', path.join(__dirname, '../client/src/'));
 app.engine('html', require('ejs').renderFile);
 
 app.use(passport.initialize());
-app.use(passport.session());
-app.use( express.cookieParser() );
+app.use(express.cookieParser());
 app.use(express.session({secret:'secretkey123'}));
 
 app.set('port', config.server.listenPort);
@@ -42,7 +41,8 @@ app.get('/', index.index);
 
 //authentication
 app.post('/login', auth.postlogin);
-app.get('/logout', auth.logout);
+app.post('/logout', auth.logout);
+app.get('/user', auth.getUser);
 
 //restricted
 app.get('/account', pass.ensureAuthenticated, restricted.account);

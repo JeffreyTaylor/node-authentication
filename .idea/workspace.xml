@@ -11,14 +11,14 @@
     <file path="/home.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383525404496" ignored="false" />
     <file path="/app.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383698992658" ignored="false" />
     <file path="/appFile.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383525331747" ignored="false" />
-    <file path="/api.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383937397310" ignored="false" />
+    <file path="/api.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383938999753" ignored="false" />
     <file path="/index.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383937378457" ignored="false" />
     <file path="/header.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383698699638" ignored="false" />
     <file path="/loginController.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383698955013" ignored="false" />
-    <file path="/login.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383699341064" ignored="false" />
-    <file path="/login.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383929026890" ignored="false" />
-    <file path="/security.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383928737063" ignored="false" />
-    <file path="/server.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383937131824" ignored="false" />
+    <file path="/login.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383940184705" ignored="false" />
+    <file path="/login.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383940652854" ignored="false" />
+    <file path="/security.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383940434776" ignored="false" />
+    <file path="/server.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383940611803" ignored="false" />
     <file path="/mongo-strategy.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383789999476" ignored="false" />
     <file path="$PROJECT_DIR$/../../angular-app-master/server/lib/security.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383701211805" ignored="false" />
     <file path="/config.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383879105446" ignored="false" />
@@ -29,8 +29,8 @@
     <file path="/user.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383936685153" ignored="false" />
     <file path="/pass.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383937544919" ignored="false" />
     <file path="/admin.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383929293509" ignored="false" />
-    <file path="/authentication.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383937325035" ignored="false" />
-    <file path="/restricted.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383937359780" ignored="false" />
+    <file path="/authentication.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383940892176" ignored="false" />
+    <file path="/restricted.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383938986768" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +50,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/index.html">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="121" selection-start="670" selection-end="670" vertical-scroll-proportion="-15.363636">
+            <state line="32" column="39" selection-start="814" selection-end="838" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/security/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="12" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/security/security.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="74" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1754#1837#0" expanded="false" />
+                <element signature="e#1877#2014#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authentication.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/routes/authentication.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="31" selection-start="681" selection-end="681" vertical-scroll-proportion="0.58146966">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="39" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -62,79 +101,25 @@
       <file leaf-file-name="api.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/routes/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="26" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
+            <state line="4" column="23" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pass.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/lib/pass.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="12" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbSchema.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/config/dbSchema.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="36" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/config/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="12" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="54" selection-start="1439" selection-end="1439" vertical-scroll-proportion="1.1641791">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authentication.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/authentication.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="68" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="restricted.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/restricted.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="10" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/package.json">
+      <file leaf-file-name="header.tpl.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/header.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.tpl.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/security/login.tpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="27" selection-start="282" selection-end="282" vertical-scroll-proportion="-4.1363635">
               <folding />
             </state>
           </provider>
@@ -150,27 +135,27 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/lib/security.js" />
         <option value="$PROJECT_DIR$/server/config/config.js" />
-        <option value="$PROJECT_DIR$/client/src/app/security/security.js" />
-        <option value="$PROJECT_DIR$/client/src/app/security/login.js" />
-        <option value="$PROJECT_DIR$/client/src/app/app.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/home.js" />
         <option value="$PROJECT_DIR$/client/src/index.html" />
         <option value="$PROJECT_DIR$/server/routes/restricted/admin.js" />
         <option value="$PROJECT_DIR$/server/routes/user.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/server/routes/authentication.js" />
-        <option value="$PROJECT_DIR$/server/routes/restricted.js" />
         <option value="$PROJECT_DIR$/server/routes/index.js" />
-        <option value="$PROJECT_DIR$/server/routes/api.js" />
         <option value="$PROJECT_DIR$/server/lib/pass.js" />
         <option value="$PROJECT_DIR$/server/config/dbSchema.js" />
+        <option value="$PROJECT_DIR$/server/routes/restricted.js" />
+        <option value="$PROJECT_DIR$/server/routes/api.js" />
+        <option value="$PROJECT_DIR$/client/src/app/app.js" />
+        <option value="$PROJECT_DIR$/client/src/app/security/security.js" />
+        <option value="$PROJECT_DIR$/client/src/app/security/login.tpl.html" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/client/src/app/security/login.js" />
+        <option value="$PROJECT_DIR$/server/routes/authentication.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="172" />
+    <option name="x" value="151" />
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="774" />
@@ -451,7 +436,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="172" y="22" width="1280" height="774" extended-state="0" />
+    <frame x="151" y="22" width="1280" height="774" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -535,34 +520,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="517" selection-end="517" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="54" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/vendor/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="121" selection-start="670" selection-end="670" vertical-scroll-proportion="-15.363636">
@@ -577,44 +534,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/restricted.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="10" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/authentication.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="68" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="26" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/pass.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="12" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/config/dbSchema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="36" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -626,9 +548,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="12" selection-start="317" selection-end="317" vertical-scroll-proportion="0.26996806">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config/dbSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="5" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.66773164">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="2" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="23" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/restricted.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="30" selection-start="147" selection-end="147" vertical-scroll-proportion="0.10383387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="39" selection-start="814" selection-end="838" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/header.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/login.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="27" selection-start="282" selection-end="282" vertical-scroll-proportion="-4.1363635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="12" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/security.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="74" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1754#1837#0" expanded="false" />
+            <element signature="e#1877#2014#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="54" selection-start="1439" selection-end="1439" vertical-scroll-proportion="1.1641791">
+        <state line="37" column="39" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/authentication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="31" selection-start="681" selection-end="681" vertical-scroll-proportion="0.58146966">
           <folding />
         </state>
       </provider>
