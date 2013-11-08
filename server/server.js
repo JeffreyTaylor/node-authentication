@@ -6,6 +6,7 @@ var express = require('express'),
     pass = require('./lib/pass'),
     user_routes = require('./routes/user'),
     api = require('./routes/api'),
+    routes = require('./routes/index'),
     config = require('./config/config')
 
 
@@ -20,7 +21,8 @@ app.engine('html', require('ejs').renderFile);
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.session({ secret: 'secret key' }));
+app.use( express.cookieParser() );
+app.use(express.session({secret:'thisismysupersecret'}));
 // all environments
 app.set('port', config.server.listenPort);
 app.use(express.logger('dev'));
@@ -42,10 +44,10 @@ if (app.get('env') === 'production') {
 app.get('/', routes.index);
 
 // JSON API
-app.get('/api/name', api.name);
+app.get('/api/id', api.id);
 
 //user.js
-pp.get('/account', pass.ensureAuthenticated, user_routes.account);
+app.get('/account', pass.ensureAuthenticated, user_routes.account);
 app.get('/login', user_routes.getlogin);
 app.post('/login', user_routes.postlogin);
 app.get('/admin', pass.ensureAuthenticated, pass.ensureAdmin(), user_routes.admin);

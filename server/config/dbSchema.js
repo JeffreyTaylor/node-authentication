@@ -1,15 +1,10 @@
 var mongoose = require('mongoose'),
-    bcrypt = require('bcrypt'),
-    config = require('./config/config'),
-    SALT_WORK_FACTOR = 10;
+    config = require('../config/config');
+
+
 exports.mongoose = mongoose;
 
-// Database connect
-var uristring =
-    process.env.MONGOLAB_URI ||
-        process.env.MONGOHQ_URL ||
-        config.server.dbLocal;
-
+var uristring = config.mongo.dbLocal;
 var mongoOptions = { db: { safe: true }};
 
 mongoose.connect(uristring, mongoOptions, function (err, res) {
@@ -20,44 +15,40 @@ mongoose.connect(uristring, mongoOptions, function (err, res) {
     }
 });
 
-//******* Database schema TODO add more validation
 var Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
 // User schema
 var userSchema = new Schema({
+
     username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true},
-    admin: { type: Boolean, required: true },
-});
+    admin: { type: Boolean, required: true }
+
+}, { collection: 'users' });
 
 
-// Bcrypt middleware
-userSchema.pre('save', function(next) {
-    var user = this;
+// to do, add decryption.
+// as a prerequisite, though, encrypted passwords need to be
+// stored in database
+userSchema.methods.comparePassword = function(candidatePassword, user, callback) {
 
-    if(!user.isModified('password')) return next();
+    console.log('comparing passwords');
+    var isMatch = false;
 
-    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
-        if(err) return next(err);
+    if (candidatePassword == user.password) {
 
-        bcrypt.hash(user.password, salt, function(err, hash) {
-            if(err) return next(err);
-            user.password = hash;
-            next();
-        });
-    });
-});
+        console.log('password match!');
+        isMatch = true;
 
-// Password verification
-userSchema.methods.comparePassword = function(candidatePassword, cb) {
-    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-        if(err) return cb(err);
-        cb(null, isMatch);
-    });
+    }
+
+    return callback(null, isMatch);
+
 };
 
 // Export user model
 var userModel = mongoose.model('User', userSchema);
+
 exports.userModel = userModel;

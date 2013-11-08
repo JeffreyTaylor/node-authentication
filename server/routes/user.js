@@ -1,32 +1,52 @@
 var passport = require('passport');
 
 exports.account = function(req, res) {
-    res.render('account', { user: req.user });
+
+    return res.json({ account: 'account' });
+
 };
 
 exports.getlogin = function(req, res) {
-    res.render('login', { user: req.user, message: req.session.messages });
+
+    return res.json({login: 'login'});
+
+    //res.render('login', { user: req.user, message: req.session.messages });
+
 };
 
 exports.admin = function(req, res) {
-    res.send('access granted admin!');
+
+    return res.json({admin: 'admin!'});
+
 };
 
 exports.postlogin = function(req, res, next) {
+
+    console.log('entering post pogin');
+
     passport.authenticate('local', function(err, user, info) {
+
         if (err) { return next(err) }
+
         if (!user) {
             req.session.messages =  [info.message];
-            return res.redirect('/login')
+
+            return res.json({user: null, error: info.message});
         }
+
         req.logIn(user, function(err) {
+
             if (err) { return next(err); }
-            return res.redirect('/');
+
+            return res.json({user: user});
+
         });
     })(req, res, next);
 };
 
 exports.logout = function(req, res) {
+
     req.logout();
-    res.redirect('/');
+
+
 };

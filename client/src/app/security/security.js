@@ -8,10 +8,9 @@ angular.module('security.service')
 
         var service = {
 
-            // Attempt to authenticate a user by the given email and password
-            login: function(email, password) {
+            login: function(username, password) {
 
-                var request = $http.post('/login', {email: email, password: password});
+                var request = $http.post('/login', {username: username, password: password});
 
                 request.then(function (response) {
 

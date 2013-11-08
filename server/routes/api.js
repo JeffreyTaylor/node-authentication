@@ -1,8 +1,4 @@
-/*
- * Serve JSON to our AngularJS client
- */
-
-exports.name = function (req, res) {
+exports.id = function (req, res) {
     res.json({
         id: 1
     });
