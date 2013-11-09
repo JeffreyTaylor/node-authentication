@@ -126,7 +126,6 @@ angular.module('security.service')
                     }
                     else {
 
-
                         $http.get('/user')
                             .success(function (response, status, headers, config) {
 
@@ -135,7 +134,7 @@ angular.module('security.service')
                                     _currentUser = response.user;
                                 }
 
-                                dfd.resolve(_currentUser);
+                                dfd.resolve(response.user);
                             })
                             .error(function (response, status, headers, config) {
 
@@ -145,9 +144,9 @@ angular.module('security.service')
                             });
 
                         service.notifyObservers();
-
-                        return dfd.promise;
                     }
+
+                    return dfd.promise;
                 }
 
                 // ------------------------------------------------------- //

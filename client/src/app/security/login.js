@@ -12,7 +12,10 @@ angular.module('security.login')
     }])
     .controller('loginController', ['$scope', '$location', 'security', function ($scope, $location, security) {
 
-        $scope.user = {};
+        $scope.user = {
+            username: null,
+            password: null
+        };
 
         $scope.isAuthenticated = security.isAuthenticated;
         $scope.isAdmin = security.isAdmin;
@@ -31,6 +34,8 @@ angular.module('security.login')
                 .then(function (result) {
 
                     $location.path('/');
+                    $scope.user = result;
+
 
                     console.log(result);
 
@@ -43,6 +48,7 @@ angular.module('security.login')
                 .then(function (result) {
 
                     console.log(result);
+                    $scope.user = result;
 
                     $location.path('/');
 

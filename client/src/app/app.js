@@ -3,7 +3,8 @@ angular.module('app',
         'ngRoute',
         'home',
         'security.service',
-        'security.login'
+        'security.login',
+        'security.login.toolbar'
     ]);
 
 
@@ -14,14 +15,39 @@ angular.module('app').config(['$routeProvider', '$locationProvider', function ($
 
 }]);
 
-angular.module('app').run(['security', function(security) {
+angular.module('app').run(['$rootScope', '$location', 'security',
+    function ($rootScope, $location, security) {
 
-    // when the app is started,
-    // check to see if the server still has a session
-    // for user.
-    security.getUserSession();
+        // to do -- move to config.
+        var unprotectedRoutes = ['/login'];
 
-}]);
+        // to do, move somewhere else.
+        var isProtectedRoute = function (location) {
+
+            var isProtected = true;
+
+            if (unprotectedRoutes.indexOf(location) > -1) {
+                isProtected = false;
+            }
+
+            return isProtected;
+
+        };
+
+        $rootScope.$on('$routeChangeStart', function (event, next, current) {
+
+            security.getUserSession()
+                .then(function (user) {
+
+                    if (isProtectedRoute($location.url()) && user == null) {
+
+                        //$location.path('/login');
+                    }
+
+                });
+        });
+
+    }]);
 
 
 angular.module('app').controller('AppController', ['$scope', '$location', 'security',
