@@ -15,7 +15,7 @@ exports.postlogin = function (request, response, next) {
 
         request.logIn(user, function (error) {
 
-            if (error) { return next(err); }
+            if (error) { return next(error); }
 
             request.session.user = user;
             return response.json(200, {data: info, user: user});

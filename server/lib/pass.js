@@ -16,6 +16,18 @@ passport.deserializeUser(function(id, done) {
 
 });
 
+var formatUser = function (user) {
+
+    return {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        admin: user.admin
+    };
+
+};
+
+
 passport.use(new localStrategy(function(username, password, done) {
 
     db.userModel.findOne({ username: username }, function(error, user) {
@@ -32,7 +44,7 @@ passport.use(new localStrategy(function(username, password, done) {
 
             if(isMatch) {
                 console.log('done -- passwords match');
-                return done(null, user);
+                return done(null, formatUser(user));
             } else {
                 console.log('done -- passwords DONT match');
                 return done(null, false, { message: 'Invalid password' });
