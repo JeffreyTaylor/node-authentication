@@ -1,8 +1,8 @@
 angular.module('security.service', []);
 
 angular.module('security.service')
-    .factory('security', ['$http', '$q', '$rootScope',
-        function ($http, $q, $rootScope) {
+    .factory('security', ['$http', '$q',
+        function ($http, $q) {
 
             // ------------------------------------------------------- //
             // ------------------------------------------------------- //
@@ -30,9 +30,9 @@ angular.module('security.service')
 
                 notifyObservers: function(){
 
-                    angular.forEach(_observerCallbacks, function(callback){
-                        callback(_currentUser);
-                    });
+                    for (var i = 0; i < _observerCallbacks.length; i++) {
+                        _observerCallbacks[i](_currentUser);
+                    }
 
                 },
 
@@ -108,9 +108,7 @@ angular.module('security.service')
 
                 isAdmin: function () {
 
-                    var user = _currentUser;
-
-                    return user != null && user.admin ? true : false;
+                    return _currentUser != null && _currentUser.admin ? true : false;
 
                 },
 

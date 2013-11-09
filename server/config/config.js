@@ -5,10 +5,12 @@ var secret = require('../secret');
 
 
 module.exports = {
+
     mongo: {
         dbLocal: secret.mongoUrl
     },
     server: {
         listenPort: 3000
     }
+
 };

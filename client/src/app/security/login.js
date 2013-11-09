@@ -2,13 +2,20 @@ angular.module('security.login', ['security.service']);
 
 
 angular.module('security.login')
+    .config(['$routeProvider', function ($routeProvider) {
+
+        $routeProvider.when('/login', {
+            templateUrl:'app/security/login.tpl.html',
+            controller:'loginController'
+        });
+
+    }])
     .controller('loginController', ['$scope', '$location', 'security', function ($scope, $location, security) {
 
         $scope.user = {};
 
         $scope.isAuthenticated = security.isAuthenticated;
-
-        $scope.isAdmin = security.isAdmin();
+        $scope.isAdmin = security.isAdmin;
 
         var updateUser = function (user) {
 
@@ -23,14 +30,14 @@ angular.module('security.login')
             security.login($scope.user.username, $scope.user.password)
                 .then(function (result) {
 
+                    $location.path('/');
+
                     console.log(result);
 
                 });
         };
 
         $scope.logout = function () {
-
-            console.log('logging out');
 
             security.logout()
                 .then(function (result) {

@@ -24,10 +24,11 @@ angular.module('app').run(['security', function(security) {
 }]);
 
 
-angular.module('app').controller('AppController', ['$scope',
-    function($scope) {
+angular.module('app').controller('AppController', ['$scope', '$location', 'security',
+    function ($scope, $location, security) {
 
-}]);
+
+    }]);
 
 
 angular.module('app').controller('HeaderController', ['$scope', '$location',
