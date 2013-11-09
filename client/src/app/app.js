@@ -8,14 +8,19 @@ angular.module('app',
 
 
 angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+
     $locationProvider.html5Mode(true);
     $routeProvider.otherwise({redirectTo: '/home'});
+
 }]);
 
 angular.module('app').run(['security', function(security) {
-    // Get the current user when the application starts
-    // (in case they are still logged in from a previous session)
+
+    // when the app is started,
+    // check to see if the server still has a session
+    // for user.
     security.getUserSession();
+
 }]);
 
 

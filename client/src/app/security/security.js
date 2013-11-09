@@ -1,12 +1,44 @@
 angular.module('security.service', []);
 
 angular.module('security.service')
-    .factory('security', ['$http', '$q',
-        function ($http, $q) {
+    .factory('security', ['$http', '$q', '$rootScope',
+        function ($http, $q, $rootScope) {
+
+            // ------------------------------------------------------- //
+            // ------------------------------------------------------- //
+            // ------------------------------------------------------- //
 
             var _currentUser = null;
+            var _observerCallbacks = [];
+
+
+            // ------------------------------------------------------- //
+            // ------------------------------------------------------- //
+            // ------------------------------------------------------- //
 
             var service = {
+
+                registerObserverCallback: function(callback){
+
+                    _observerCallbacks.push(callback);
+
+                },
+
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+
+                notifyObservers: function(){
+
+                    angular.forEach(_observerCallbacks, function(callback){
+                        callback(_currentUser);
+                    });
+
+                },
+
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
 
                 login: function (username, password) {
 
@@ -16,7 +48,6 @@ angular.module('security.service')
                         .success(function (response, status, headers, config) {
 
                             _currentUser = response.user;
-
                             dfd.resolve(response.user);
 
                         })
@@ -27,9 +58,15 @@ angular.module('security.service')
 
                         });
 
+                    service.notifyObservers();
+
                     return dfd.promise;
 
                 },
+
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
 
                 logout: function () {
 
@@ -38,28 +75,36 @@ angular.module('security.service')
                     $http.post('/logout')
                         .success(function (response, status, headers, config) {
 
-                            console.log('logout success');
                             _currentUser = null;
-                            console.log('current user is ' + _currentUser);
-
                             dfd.resolve(_currentUser);
 
                         })
                         .error(function (response, status, headers, config) {
 
-                            console.log('failed');
                             _currentUser = null;
                             dfd.resolve(_currentUser);
 
                         });
 
+                    service.notifyObservers();
+
                     return dfd.promise;
 
                 },
 
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+
                 isAuthenticated: function () {
+
                     return _currentUser != null ? true : false;
+
                 },
+
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
 
                 isAdmin: function () {
 
@@ -69,44 +114,49 @@ angular.module('security.service')
 
                 },
 
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+
                 getUserSession: function () {
 
+                    var dfd = $q.defer();
 
                     if (service.isAuthenticated()) {
 
-                        return _currentUser;
+                        dfd.resolve(_currentUser);
                     }
                     else {
 
-                        var dfd = $q.defer();
 
                         $http.get('/user')
                             .success(function (response, status, headers, config) {
 
-                                console.log('current user');
-
-                                console.log(response);
-                                console.log(status);
-                                console.log(config);
-
                                 if (response.user != null) {
 
                                     _currentUser = response.user;
-
                                 }
 
                                 dfd.resolve(_currentUser);
                             })
                             .error(function (response, status, headers, config) {
 
-                                console.log('error posting to /current-user');
+                                console.log('error posting to /user');
                                 dfd.resolve(response);
 
                             });
+
+                        service.notifyObservers();
+
                         return dfd.promise;
                     }
                 }
+
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
+                // ------------------------------------------------------- //
             };
 
             return service;
+
         }]);

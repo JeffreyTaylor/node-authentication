@@ -4,10 +4,19 @@ angular.module('security.login', ['security.service']);
 angular.module('security.login')
     .controller('loginController', ['$scope', '$location', 'security', function ($scope, $location, security) {
 
-        $scope.user = {
-            username: null,
-            password: null
+        $scope.user = {};
+
+        $scope.isAuthenticated = security.isAuthenticated;
+
+        $scope.isAdmin = security.isAdmin();
+
+        var updateUser = function (user) {
+
+            $scope.user = user;
+
         };
+
+        security.registerObserverCallback(updateUser);
 
         $scope.login = function () {
 

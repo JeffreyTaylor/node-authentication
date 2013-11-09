@@ -27,6 +27,7 @@ exports.postlogin = function (request, response, next) {
 exports.logout = function(request, response) {
 
     console.log('logging out');
+
     request.logout();
     request.session.user = null;
     response.send(204);
