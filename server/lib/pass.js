@@ -2,6 +2,18 @@ var passport = require('passport'),
     localStrategy = require('passport-local').Strategy,
     db = require('../config/dbSchema');
 
+
+var formatUser = function (user) {
+
+    return {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        admin: user.admin
+    };
+
+};
+
 passport.serializeUser(function(user, done) {
 
     done(null, user.id);
@@ -16,18 +28,6 @@ passport.deserializeUser(function(id, done) {
 
 });
 
-var formatUser = function (user) {
-
-    return {
-        id: user.id,
-        username: user.username,
-        email: user.email,
-        admin: user.admin
-    };
-
-};
-
-
 passport.use(new localStrategy(function(username, password, done) {
 
     db.userModel.findOne({ username: username }, function(error, user) {
@@ -36,17 +36,17 @@ passport.use(new localStrategy(function(username, password, done) {
 
         if (!user) { return done(null, false, { message: 'Unknown user ' + username }); }
 
-        console.log('user retrieved from database is ' + user);
-
         user.comparePassword(password, user, function(error, isMatch) {
 
             if (error) return done(error);
 
             if(isMatch) {
-                console.log('done -- passwords match');
+
                 return done(null, formatUser(user));
-            } else {
-                console.log('done -- passwords DONT match');
+
+            }
+            else {
+
                 return done(null, false, { message: 'Invalid password' });
 
             }
@@ -61,7 +61,7 @@ exports.ensureAuthenticated = function ensureAuthenticated(request, response, ne
 
     return response.json({error: 'not authenticated'});
 
-}
+};
 
 exports.ensureAdmin = function ensureAdmin(request, response, next) {
 
@@ -79,4 +79,4 @@ exports.ensureAdmin = function ensureAdmin(request, response, next) {
         }
     }
 
-}
+};
