@@ -2,7 +2,16 @@ var passport = require('passport');
 
 exports.postlogin = function (request, response, next) {
 
-    console.log('entering post pogin');
+    console.log(request.body.username);
+    console.log(request.body.password);
+
+    if (request.body.username == null) {
+        return response.json({user: null, error: 'username cannot be blank'});
+    }
+    if (request.body.password == null) {
+        return response.json({user: null, error: 'password cannot be blank'});
+    }
+
 
     passport.authenticate('local', function(error, user, info) {
 
@@ -10,7 +19,7 @@ exports.postlogin = function (request, response, next) {
 
         if (!user) {
 
-            return response.json(304, {user: null, error: info.message});
+            return response.json({user: null, error: info.message});
         }
 
         request.logIn(user, function (error) {
@@ -18,15 +27,13 @@ exports.postlogin = function (request, response, next) {
             if (error) { return next(error); }
 
             request.session.user = user;
-            return response.json(200, {data: info, user: user});
+            return response.json({data: info, user: user});
 
         });
     })(request, response, next);
 };
 
 exports.logout = function(request, response) {
-
-    console.log('logging out');
 
     request.logout();
     request.session.user = null;
@@ -38,9 +45,7 @@ exports.getUser = function(request, response, next) {
 
     var user = request.session.user;
 
-    console.log(request);
-
-    response.json(200, { user: user });
+    response.json({ user: user });
 
 };
 

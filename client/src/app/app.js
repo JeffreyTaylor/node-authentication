@@ -40,7 +40,7 @@ angular.module('app').run(['$rootScope', '$location', 'security',
             security.getUserSession()
                 .then(function (user) {
 
-                    if (isProtectedRoute($location.url()) && user === null) {
+                    if (isProtectedRoute($location.url()) && user == null) {
 
                         $location.path('/login');
                     }

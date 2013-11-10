@@ -5,7 +5,9 @@ angular.module('responseInterceptors.401', [])
         var logsOutUserOn401 = ['$q', '$location', function ($q, $location) {
 
             var success = function (response) {
+
                 return response;
+
             };
 
             var error = function (response) {
