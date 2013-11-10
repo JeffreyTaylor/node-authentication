@@ -4,19 +4,19 @@
     <list default="true" id="27723680-cf78-4847-97f4-cfdb114c0637" name="Default" comment="" />
     <ignored path="events-app.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384037534405" ignored="false" />
+    <file path="/index.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384045925455" ignored="false" />
     <file path="$PROJECT_DIR$/../../angular-app-master/client/src/app/projectsinfo/list.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383488481363" ignored="false" />
     <file path="/list.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383488469800" ignored="false" />
-    <file path="/home.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383488479432" ignored="false" />
+    <file path="/home.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384046682237" ignored="false" />
     <file path="/home.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383525404496" ignored="false" />
-    <file path="/app.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384037719311" ignored="false" />
+    <file path="/app.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384045432971" ignored="false" />
     <file path="/appFile.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383525331747" ignored="false" />
     <file path="/api.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383938999753" ignored="false" />
     <file path="/index.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383937378457" ignored="false" />
     <file path="/header.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384036580635" ignored="false" />
     <file path="/loginController.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383698955013" ignored="false" />
     <file path="/login.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384043504452" ignored="false" />
-    <file path="/login.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384045171215" ignored="false" />
+    <file path="/login.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384047154071" ignored="false" />
     <file path="/security.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384044917563" ignored="false" />
     <file path="/server.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383940611803" ignored="false" />
     <file path="/mongo-strategy.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383789999476" ignored="false" />
@@ -35,8 +35,9 @@
     <file path="/.gitignore" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384023335313" ignored="false" />
     <file path="/secret.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384023264510" ignored="false" />
     <file path="/loginToolbar.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384037974256" ignored="false" />
-    <file path="/loginToolbar.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384037664271" ignored="false" />
+    <file path="/loginToolbar.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384047027567" ignored="false" />
     <file path="$PROJECT_DIR$/../../angular-app-master/client/src/common/security/login/toolbar.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384037051034" ignored="false" />
+    <file path="/401Interceptor.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384045832256" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,25 +60,16 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="939" selection-end="1190" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.tpl.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/security/login.tpl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="5" selection-start="24" selection-end="24" vertical-scroll-proportion="-2.9545455">
+            <state line="51" column="51" selection-start="1247" selection-end="1247" vertical-scroll-proportion="-26.52">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="login.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/app/security/login.js">
+        <entry file="file://$PROJECT_DIR$/client/src/app/security/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="37" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.543131">
+            <state line="60" column="46" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.7715655">
               <folding />
             </state>
           </provider>
@@ -93,22 +85,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/routes/authentication.js" />
-        <option value="$PROJECT_DIR$/server/lib/pass.js" />
-        <option value="$PROJECT_DIR$/server/routes/restricted.js" />
-        <option value="$PROJECT_DIR$/server/secret.js" />
-        <option value="$PROJECT_DIR$/server/.gitignore" />
         <option value="$PROJECT_DIR$/server/routes/api.js" />
         <option value="$PROJECT_DIR$/server/config/config.js" />
         <option value="$PROJECT_DIR$/client/src/login.html" />
-        <option value="$PROJECT_DIR$/client/src/app/header.tpl.html" />
-        <option value="$PROJECT_DIR$/client/src/index.html" />
         <option value="$PROJECT_DIR$/client/src/app/security/loginToolbar.js" />
-        <option value="$PROJECT_DIR$/client/src/app/app.js" />
         <option value="$PROJECT_DIR$/client/src/app/security/loginToolbar.tpl.html" />
         <option value="$PROJECT_DIR$/client/src/app/security/login.tpl.html" />
-        <option value="$PROJECT_DIR$/client/src/app/security/security.js" />
+        <option value="$PROJECT_DIR$/client/src/app/app.js" />
         <option value="$PROJECT_DIR$/client/src/app/security/login.js" />
+        <option value="$PROJECT_DIR$/client/src/app/common/responseInterceptors/401Interceptor.js" />
+        <option value="$PROJECT_DIR$/client/src/app/header.tpl.html" />
+        <option value="$PROJECT_DIR$/client/src/index.html" />
+        <option value="$PROJECT_DIR$/client/src/app/security/login/login.tpl.html" />
+        <option value="$PROJECT_DIR$/client/src/app/home/home.tpl.html" />
+        <option value="$PROJECT_DIR$/client/src/app/security/login/loginToolbar.js" />
+        <option value="$PROJECT_DIR$/client/src/app/security/security.js" />
+        <option value="$PROJECT_DIR$/client/src/app/security/login/login.js" />
       </list>
     </option>
   </component>
@@ -251,6 +243,88 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -275,11 +349,11 @@
       <recent name="$PROJECT_DIR$/client/vendor/angular" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/app/security/login" />
       <recent name="$PROJECT_DIR$/server/routes" />
       <recent name="$PROJECT_DIR$/server/config" />
       <recent name="$PROJECT_DIR$/server/lib" />
       <recent name="$PROJECT_DIR$/client/src" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.Unnamed">
@@ -423,20 +497,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="2" selection-start="107" selection-end="107" vertical-scroll-proportion="0.041533545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/pass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="2" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="4" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
@@ -479,58 +539,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/common/responseInterceptors/401Interceptor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="77" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="22" selection-start="617" selection-end="617" vertical-scroll-proportion="0.51655626">
+        <state line="6" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.12913907">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/login/loginToolbar.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="242" selection-end="550" vertical-scroll-proportion="0.19370861">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/login/login.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="30" selection-start="283" selection-end="283" vertical-scroll-proportion="0.25827813">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="6" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/header.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="19" selection-start="137" selection-end="137" vertical-scroll-proportion="0.15066226">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/security/loginToolbar.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="35" selection-start="85" selection-end="85" vertical-scroll-proportion="-1.1818181">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="939" selection-end="1190" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/security/login.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="5" selection-start="24" selection-end="24" vertical-scroll-proportion="-2.9545455">
+        <state line="4" column="4" selection-start="89" selection-end="120" vertical-scroll-proportion="-2.3636363">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/security/security.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="61" selection-start="4144" selection-end="4144" vertical-scroll-proportion="1.4153354">
+        <state line="136" column="70" selection-start="4780" selection-end="4780" vertical-scroll-proportion="0.5223642">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/security/loginToolbar.js">
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/login/loginToolbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="30" selection-start="307" selection-end="307" vertical-scroll-proportion="0.14536741">
+        <state line="7" column="45" selection-start="322" selection-end="322" vertical-scroll-proportion="0.14536741">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/security/login.js">
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="37" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.543131">
+        <state line="51" column="51" selection-start="1247" selection-end="1247" vertical-scroll-proportion="-26.52">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/security/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="46" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.7715655">
           <folding />
         </state>
       </provider>

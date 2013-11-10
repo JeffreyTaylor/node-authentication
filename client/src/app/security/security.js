@@ -112,8 +112,6 @@ angular.module('security.service')
 
                 getUserSession: function () {
 
-                    console.log('getting user session');
-
                     var dfd = $q.defer();
 
                     if (service.isAuthenticated()) {

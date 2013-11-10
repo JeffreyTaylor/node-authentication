@@ -1,11 +1,9 @@
-angular.module('security.login', ['security.service']);
+angular.module('security.login', [])
 
-
-angular.module('security.login')
     .config(['$routeProvider', function ($routeProvider) {
 
         $routeProvider.when('/login', {
-            templateUrl:'app/security/login.tpl.html',
+            templateUrl:'app/security/login/login.tpl.html',
             controller:'loginController'
         });
 
@@ -33,7 +31,6 @@ angular.module('security.login')
                 $scope.user = user;
 
         };
-
         security.registerObserverCallback(updateUser);
 
         $scope.login = function () {
@@ -46,14 +43,11 @@ angular.module('security.login')
                     $location.path('/');
                     $scope.user = result;
 
-
-                    console.log(result);
-
                 });
             }
             else {
 
-                // do validation here
+                // show validation messages here
 
             }
         };
@@ -63,10 +57,9 @@ angular.module('security.login')
             security.logout()
                 .then(function (result) {
 
-                    console.log(result);
-                    $scope.user = result;
+                    $scope.user = null;
 
-                    $location.path('/');
+                    $location.path('/login');
 
                 });
         };

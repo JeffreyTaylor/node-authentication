@@ -4,7 +4,8 @@ angular.module('app',
         'home',
         'security.service',
         'security.login',
-        'security.login.toolbar'
+        'security.login.toolbar',
+        'responseInterceptors.401'
     ]);
 
 
@@ -41,7 +42,7 @@ angular.module('app').run(['$rootScope', '$location', 'security',
 
                     if (isProtectedRoute($location.url()) && user == null) {
 
-                        //$location.path('/login');
+                        $location.path('/login');
                     }
 
                 });
