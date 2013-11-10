@@ -35,13 +35,17 @@ angular.module('security.login', [])
 
         $scope.login = function () {
 
-            if ($scope.user != null) {
+            if ($scope.user !== null) {
 
                 security.login($scope.user.username, $scope.user.password)
                 .then(function (result) {
 
-                    $location.path('/');
-                    $scope.user = result;
+                    if (result) {
+
+                        $location.path('/');
+                        $scope.user = result;
+
+                    }
 
                 });
             }

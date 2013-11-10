@@ -1,6 +1,6 @@
 angular.module('responseInterceptors.401', [])
 
-    .config(function ($httpProvider) {
+    .config(['$httpProvider', function ($httpProvider) {
 
         var logsOutUserOn401 = ['$q', '$location', function ($q, $location) {
 
@@ -29,4 +29,4 @@ angular.module('responseInterceptors.401', [])
 
         $httpProvider.responseInterceptors.push(logsOutUserOn401);
 
-    });
+    }]);

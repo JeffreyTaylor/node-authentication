@@ -47,14 +47,16 @@ angular.module('security.service')
                     $http.post('/login', {username: username, password: password})
                         .success(function (response, status, headers, config) {
 
+                            console.log(response);
                             _currentUser = response.user;
                             dfd.resolve(response.user);
 
                         })
                         .error(function (response, status, headers, config) {
 
+                            console.log(response);
                             console.log('error posting to /login');
-                            dfd.resolve(response);
+                            dfd.resolve(null);
 
                         });
 
@@ -92,7 +94,7 @@ angular.module('security.service')
 
                 isAuthenticated: function () {
 
-                    return _currentUser != null ? true : false;
+                    return _currentUser !== null ? true : false;
 
                 },
 
@@ -102,7 +104,7 @@ angular.module('security.service')
 
                 isAdmin: function () {
 
-                    return _currentUser != null && _currentUser.admin ? true : false;
+                    return _currentUser !== null && _currentUser.admin ? true : false;
 
                 },
 
@@ -123,7 +125,7 @@ angular.module('security.service')
                         $http.get('/user')
                             .success(function (response, status, headers, config) {
 
-                                if (response.user != null) {
+                                if (response.user !== null) {
 
                                     _currentUser = response.user;
                                 }
