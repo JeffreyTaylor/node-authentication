@@ -73,13 +73,7 @@ angular.module('security.service')
                     var dfd = $q.defer();
 
                     $http.post('/logout')
-                        .success(function (response, status, headers, config) {
-
-                            _currentUser = null;
-                            dfd.resolve(_currentUser);
-
-                        })
-                        .error(function (response, status, headers, config) {
+                        .then(function (response, status, headers, config) {
 
                             _currentUser = null;
                             dfd.resolve(_currentUser);
@@ -118,6 +112,8 @@ angular.module('security.service')
 
                 getUserSession: function () {
 
+                    console.log('getting user session');
+
                     var dfd = $q.defer();
 
                     if (service.isAuthenticated()) {
@@ -142,9 +138,9 @@ angular.module('security.service')
                                 dfd.resolve(response);
 
                             });
-
-                        service.notifyObservers();
                     }
+
+                    service.notifyObservers();
 
                     return dfd.promise;
                 }

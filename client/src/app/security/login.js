@@ -9,6 +9,7 @@ angular.module('security.login')
             controller:'loginController'
         });
 
+
     }])
     .controller('loginController', ['$scope', '$location', 'security', function ($scope, $location, security) {
 
@@ -17,12 +18,19 @@ angular.module('security.login')
             password: null
         };
 
+        security.getUserSession()
+            .then(function (user) {
+
+                $scope.user = user;
+
+            });
+
         $scope.isAuthenticated = security.isAuthenticated;
         $scope.isAdmin = security.isAdmin;
 
         var updateUser = function (user) {
 
-            $scope.user = user;
+                $scope.user = user;
 
         };
 
@@ -30,7 +38,9 @@ angular.module('security.login')
 
         $scope.login = function () {
 
-            security.login($scope.user.username, $scope.user.password)
+            if ($scope.user != null) {
+
+                security.login($scope.user.username, $scope.user.password)
                 .then(function (result) {
 
                     $location.path('/');
@@ -40,6 +50,12 @@ angular.module('security.login')
                     console.log(result);
 
                 });
+            }
+            else {
+
+                // do validation here
+
+            }
         };
 
         $scope.logout = function () {
