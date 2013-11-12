@@ -5,6 +5,7 @@ var express = require('express'),
     passport = require('passport'),
     pass = require('./lib/pass'),
     auth = require('./routes/authentication'),
+    account = require('./routes/account'),
     restricted = require('./routes/restricted'),
     api = require('./routes/api'),
     index = require('./routes/index'),
@@ -44,12 +45,15 @@ app.post('/login', auth.postlogin);
 app.post('/logout', auth.logout);
 app.get('/user', auth.getUser);
 
+//acount
+app.post('/register', account.register);
+
 //restricted
 app.get('/account', pass.ensureAuthenticated, restricted.account);
 app.get('/admin', pass.ensureAuthenticated, pass.ensureAdmin, restricted.admin);
 
 // JSON API
-app.get('/api/id', api.id);
+//app.get('/api/id', api.id);
 
 //everything else:
 app.get('*', index.index);

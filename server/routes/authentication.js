@@ -12,7 +12,6 @@ exports.postlogin = function (request, response, next) {
         return response.json({user: null, error: 'password cannot be blank'});
     }
 
-
     passport.authenticate('local', function(error, user, info) {
 
         if (error) { return next(error) }

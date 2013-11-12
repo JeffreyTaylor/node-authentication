@@ -2,25 +2,27 @@ angular.module('app',
     [
         'ngRoute',
         'home',
-        'security.service',
-        'security.login',
-        'security.login.toolbar',
-        'responseInterceptors.401'
+        'account.login',
+        'account.login.toolbar',
+        'account.services.register',
+        'account.services.authentication',
+        'account.register'
     ]);
 
 
 angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true);
+
     $routeProvider.otherwise({redirectTo: '/home'});
 
 }]);
 
-angular.module('app').run(['$rootScope', '$location', 'security',
-    function ($rootScope, $location, security) {
+angular.module('app').run(['$rootScope', '$location', 'authService',
+    function ($rootScope, $location, authService) {
 
         // to do -- move to config.
-        var unprotectedRoutes = ['/login'];
+        var unprotectedRoutes = ['/login', '/register'];
 
         // to do, move somewhere else.
         var isProtectedRoute = function (location) {
@@ -37,7 +39,7 @@ angular.module('app').run(['$rootScope', '$location', 'security',
 
         $rootScope.$on('$routeChangeStart', function (event, next, current) {
 
-            security.getUserSession()
+            authService.getUserSession()
                 .then(function (user) {
 
                     if (isProtectedRoute($location.url()) && user == null) {
@@ -51,8 +53,8 @@ angular.module('app').run(['$rootScope', '$location', 'security',
     }]);
 
 
-angular.module('app').controller('AppController', ['$scope', '$location', 'security',
-    function ($scope, $location, security) {
+angular.module('app').controller('AppController', ['$scope', '$location',
+    function ($scope, $location) {
 
 
     }]);

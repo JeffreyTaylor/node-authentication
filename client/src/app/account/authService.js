@@ -1,7 +1,6 @@
-angular.module('security.service', []);
+angular.module('account.services.authentication', [])
 
-angular.module('security.service')
-    .factory('security', ['$http', '$q',
+    .factory('authService', ['$http', '$q',
         function ($http, $q) {
 
             // ------------------------------------------------------- //
