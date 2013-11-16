@@ -11,6 +11,8 @@ angular.module('account.login', [])
     }])
     .controller('loginController', ['$scope', '$location', 'authService', function ($scope, $location, authService) {
 
+        $scope.messages = "";
+
         $scope.user = {
             username: null,
             password: null
@@ -51,10 +53,19 @@ angular.module('account.login', [])
             authService.login($scope.user.username, $scope.user.password)
                 .then(function (result) {
 
-                    if (result) {
+                    console.log('login');
+                    console.log(result);
+
+
+                    if (result.user != null) {
 
                         $location.path('/');
                         $scope.user = result;
+
+                    }
+                    else {
+
+                        $scope.messages = result.error;
 
                     }
 

@@ -46,9 +46,11 @@ angular.module('account.services.authentication', [])
                     $http.post('/login', {username: username, password: password})
                         .success(function (response, status, headers, config) {
 
-                            console.log(response);
-                            _currentUser = response.user;
-                            dfd.resolve(response.user);
+                            if (response.user != null) {
+                                _currentUser = response.user;
+                            }
+
+                            dfd.resolve(response);
 
                         })
                         .error(function (response, status, headers, config) {

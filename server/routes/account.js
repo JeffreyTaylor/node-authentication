@@ -18,11 +18,13 @@ exports.register = function (request, response, next) {
     }
 
 
+    //check if already exists
+
     db.userModel.create({
         username: request.body.username ,
         email: request.body.email,
         password: request.body.password,
         admin: false
     });
-    å
+
 };
