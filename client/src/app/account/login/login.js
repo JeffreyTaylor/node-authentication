@@ -11,17 +11,22 @@ angular.module('account.login', [])
     }])
     .controller('loginController', ['$scope', '$location', 'authService', function ($scope, $location, authService) {
 
-        $scope.messages = "";
-
-        $scope.user = {
-            username: null,
-            password: null
-        };
-
         authService.getUserSession()
             .then(function (user) {
 
-                $scope.user = user;
+                if (user == null) {
+
+                    $scope.user = {
+                        username: null,
+                        password: null
+                    };
+
+                }
+                else {
+
+                    $scope.user = user;
+
+                }
 
             });
 
@@ -32,23 +37,17 @@ angular.module('account.login', [])
         };
 
         authService.registerObserverCallback(updateUser);
+
         $scope.isAuthenticated = authService.isAuthenticated;
         $scope.isAdmin = authService.isAdmin;
 
         $scope.login = function () {
 
-            if ($scope.user == null) {
-                console.log('user was null');
-                return;
-            }
-            if ($scope.user.username == null) {
-                console.log('username was null');
-                return;
-            }
-            if ($scope.user.password == null) {
-                console.log('password was null');
-                return;
-            }
+            $scope.messages = [];
+
+            validateRequest();
+
+            if (!$scope.messages.length > 0) {
 
             authService.login($scope.user.username, $scope.user.password)
                 .then(function (result) {
@@ -57,7 +56,7 @@ angular.module('account.login', [])
                     console.log(result);
 
 
-                    if (result.user != null) {
+                    if (result != null && result.user != null) {
 
                         $location.path('/');
                         $scope.user = result;
@@ -70,6 +69,18 @@ angular.module('account.login', [])
                     }
 
                 });
+            }
+
+        };
+
+        var validateRequest = function () {
+
+            if ($scope.user.username == null || $scope.user.username == "") {
+                $scope.messages.push('username cannot be blank');
+            }
+            if ($scope.user.password == null || $scope.user.password == "") {
+                $scope.messages.push('password cannot be blank');
+            }
 
         };
 

@@ -47,7 +47,7 @@ passport.use(new localStrategy(function(username, password, done) {
 
             if(isMatch) {
 
-                return done(null, formatUser(user));
+                return done(null, formatUser(user), {messages: messages});
 
             }
             else {

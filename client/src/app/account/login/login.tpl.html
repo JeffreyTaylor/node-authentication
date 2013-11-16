@@ -11,9 +11,10 @@
     <button type="submit" data-ng-click="login()">Login</button>
 
 
-
     <a href="/register">Register</a>
 
-    <span>{{messages}}</span>
+    <span ng-repeat="message in messages">
+        {{message}}
+    </span>
 
 </div>
