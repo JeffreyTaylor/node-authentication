@@ -1,16 +1,64 @@
 <div>
+    <form name="registerForm" ng-submit="register">
+        Register
 
-    Register
+        <label>Username
+            <input type="text"
+                   placeholder="Username"
+                   name="username"
+                   data-ng-model="newUser.username"
+                   ng-minlength=3
+                   ng-maxlength=20
+                   ensure-unique="username"
+                   required="required"/>
+        </label>
+        <label>Email
+            <input type="email"
+                   placeholder="Email"
+                   name="email"
+                   data-ng-model="newUser.email"
+                   required="required"/>
+        </label>
+        <label>Password
+            <input type="password"
+                   placeholder="Password"
+                   name="password"
+                   data-ng-model="newUser.password"
+                   required="required"/>
+        </label>
+        <button type="submit" data-ng-click="register()">Register</button>
 
-    <label>Username
-        <input type="text" data-ng-model="newUser.username"/>
-    </label>
-    <label>Email
-        <input type="email" data-ng-model="newUser.email"/>
-    </label>
-    <label>Password
-        <input type="password" data-ng-model="newUser.password"/>
-    </label>
-    <button type="submit" data-ng-click="register()">Register</button>
+        <div class="error" ng-show="registerForm.username.$dirty && registerForm.username.$invalid">
+            <small class="error" ng-show="registerForm.username.$error.required">Please enter a username</small>
+            <small class="error" ng-show="registerForm.username.$error.minlength">Your username is required to be at least 3 characters</small>
+            <small class="error" ng-show="registerForm.username.$error.maxlength">Your username cannot be longer than 20 characters</small>
+            <small class="error" ng-show="registerForm.username.$error.unique">That username is taken, please try another</small>
+        </div>
+
+        <div class="error"
+             ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+            <small class="error"
+                   ng-show="registerForm.email.$error.required">
+                Your email is required.
+            </small>
+            <small class="error"
+                   ng-show="registerForm.email.$error.email">
+                That is not a valid email. Please input a valid email.
+            </small>
+        </div>
+
+        <br />
+        <br />
+        <span>registerForm.$valid = {{registerForm.$valid}}</span><br/>
+        <span>registerForm.$error.required = {{!!registerForm.$error.required}}</span><br/>
+        <span>registerForm.$error.email = {{!!registerForm.$error.email}}</span><br/>
+    </form>
+
+
+
+
+        <span ng-repeat="message in messages">
+        {{message}}
+    </span>
 
 </div>

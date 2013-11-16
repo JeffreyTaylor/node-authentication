@@ -14,11 +14,10 @@ angular.module('account.services.register', [])
                         username: newUser.username,
                         email: newUser.email,
                         password: newUser.password
-
                     })
                         .then(function (response, status, headers, config) {
 
-                            dfd.resolve(response);
+                            dfd.resolve(response.data);
 
                         });
 

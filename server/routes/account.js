@@ -1,30 +1,56 @@
 var db = require('../config/dbSchema');
 
-
 exports.register = function (request, response, next) {
 
-    console.log(request.body.username);
-    console.log(request.body.email);
-    console.log(request.body.password);
+    var messages = [];
 
     if (request.body.username == null) {
-        return response.json({user: null, error: 'username cannot be blank'});
+        messages.push('username cannot be blank');
     }
     if (request.body.email == null) {
-        return response.json({user: null, error: 'email cannot be blank'});
+        messages.push('email cannot be blank');
     }
     if (request.body.password == null) {
-        return response.json({user: null, error: 'password cannot be blank'});
+        messages.push('password cannot be blank');
     }
 
 
-    //check if already exists
+    // below is ugly. needs refactored.
 
-    db.userModel.create({
-        username: request.body.username ,
-        email: request.body.email,
-        password: request.body.password,
-        admin: false
+    db.userModel.findOne({ email: request.body.email }, function (error, email) {
+
+        console.log(email);
+        console.log('checking email')
+
+        if (email != null) {
+            messages.push('account with email' + request.body.email + ' already exists');
+        }
+
+        if (messages.length > 0) {
+            return response.json({user: null, messages: messages});
+        }
+
+        db.userModel.create({
+            username: request.body.username,
+            email: request.body.email,
+            password: request.body.password,
+            admin: false
+        }, function (error, user) {
+
+            if (error) {
+                console.log(error);
+                return response.json({user: null, messages: 'error inserting to db'});
+            }
+
+            var returnedUser = {
+                username: request.body.username,
+                email: request.body.email,
+                admin: false
+            };
+
+
+            return response.json({user: returnedUser, messages: 'account created!'});
+
+        });
     });
-
 };

@@ -53,7 +53,7 @@ app.get('/account', pass.ensureAuthenticated, restricted.account);
 app.get('/admin', pass.ensureAuthenticated, pass.ensureAdmin, restricted.admin);
 
 // JSON API
-//app.get('/api/id', api.id);
+app.post('/api/check/username', api.checkUsername);
 
 //everything else:
 app.get('*', index.index);
