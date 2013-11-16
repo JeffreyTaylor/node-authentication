@@ -4,31 +4,27 @@ angular.module('account.login', [])
 
         $routeProvider.when('/login', {
             templateUrl: 'app/account/login/login.tpl.html',
-            controller: 'loginController'
+            controller: 'loginController',
+            resolve: {
+                user: ['authService', function (authService) {
+                    authService.getUserSession()
+                        .then(function (user) {
+
+                            if (user == null) {
+                                user = {
+                                    username: null,
+                                    password: null
+                                };
+                            }
+                            return user;
+                        });
+                }]}
         });
 
-
     }])
-    .controller('loginController', ['$scope', '$location', 'authService', function ($scope, $location, authService) {
+    .controller('loginController', ['$scope', '$location', 'authService', 'user', function ($scope, $location, authService, user) {
 
-        authService.getUserSession()
-            .then(function (user) {
-
-                if (user == null) {
-
-                    $scope.user = {
-                        username: null,
-                        password: null
-                    };
-
-                }
-                else {
-
-                    $scope.user = user;
-
-                }
-
-            });
+        $scope.user = user;
 
         var updateUser = function (user) {
 
@@ -49,26 +45,29 @@ angular.module('account.login', [])
 
             if (!$scope.messages.length > 0) {
 
-            authService.login($scope.user.username, $scope.user.password)
-                .then(function (result) {
+                authService.login($scope.user.username, $scope.user.password)
+                    .then(function (result) {
 
-                    console.log('login');
-                    console.log(result);
+                        console.log('login');
+                        console.log(result);
 
 
-                    if (result != null && result.user != null) {
+                        if (result != null && result.user != null) {
 
-                        $location.path('/');
-                        $scope.user = result;
+                            $location.path('/');
+                            $scope.user = result;
 
-                    }
-                    else {
+                        }
+                        else {
 
-                        $scope.messages = result.error;
+                            // server returns very verbose messages
+                            // about what was invalid about login request.
+                            // opting here to show generic message to user.
+                            $scope.messages = ['invalid username / password.'];
 
-                    }
+                        }
 
-                });
+                    });
             }
 
         };

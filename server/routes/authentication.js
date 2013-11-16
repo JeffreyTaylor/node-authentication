@@ -13,7 +13,11 @@ exports.postlogin = function (request, response, next) {
 
     passport.authenticate('local', function(error, user, info) {
 
-        for (var i = 0; i < info.messages; i++) {
+        console.log(info);
+
+        for (var i = 0; i < info.messages.length; i++) {
+            console.log(info.messages);
+            console.log(info.messages[0]);
             messages.push(info.messages[i]);
         }
 

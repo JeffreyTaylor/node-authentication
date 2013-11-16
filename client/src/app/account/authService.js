@@ -55,9 +55,6 @@ angular.module('account.services.authentication', [])
                         })
                         .error(function (response, status, headers, config) {
 
-                            console.log(response);
-                            console.log(status);
-                            console.log(config);
                             console.log('error posting to /login');
                             dfd.resolve(null);
 

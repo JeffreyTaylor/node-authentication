@@ -16,7 +16,7 @@
     <file path="/header.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384036580635" ignored="false" />
     <file path="/loginController.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383698955013" ignored="false" />
     <file path="/login.tpl.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384626185109" ignored="false" />
-    <file path="/login.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384626371325" ignored="false" />
+    <file path="/login.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384627300180" ignored="false" />
     <file path="/security.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384118774671" ignored="false" />
     <file path="/server.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384390517776" ignored="false" />
     <file path="/mongo-strategy.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383789999476" ignored="false" />
@@ -29,7 +29,7 @@
     <file path="/user.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383936685153" ignored="false" />
     <file path="/pass.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384626432479" ignored="false" />
     <file path="/admin.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383929293509" ignored="false" />
-    <file path="/authentication.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384625249249" ignored="false" />
+    <file path="/authentication.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384627134625" ignored="false" />
     <file path="/restricted.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1383938986768" ignored="false" />
     <file path="/toolbar.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384018602837" ignored="false" />
     <file path="/.gitignore" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384023335313" ignored="false" />
@@ -55,7 +55,7 @@
     <file path="$PROJECT_DIR$/../google-glass-upmc/server/views/test.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384389772942" ignored="false" />
     <file path="/test.html" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384389772102" ignored="false" />
     <file path="$PROJECT_DIR$/../../glassfax-master/app.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384391835081" ignored="false" />
-    <file path="/authService.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384619010183" ignored="false" />
+    <file path="/authService.js" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384626755884" ignored="false" />
     <file path="/Readme.md" changelist="27723680-cf78-4847-97f4-cfdb114c0637" time="1384623211979" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,10 +76,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="login.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/app/account/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="24" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0">
+            <state line="23" column="26" selection-start="791" selection-end="791" vertical-scroll-proportion="-0.68210864">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/account/authService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="126" column="0" selection-start="4383" selection-end="4383" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -97,16 +106,7 @@
       <file leaf-file-name="authentication.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/routes/authentication.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="26" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pass.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/lib/pass.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="77" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.08626198">
+            <state line="12" column="49" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,13 +131,13 @@
         <option value="$PROJECT_DIR$/client/src/app/account/register/registerService.js" />
         <option value="$PROJECT_DIR$/client/src/app/account/register/register.js" />
         <option value="$PROJECT_DIR$/server/routes/account.js" />
-        <option value="$PROJECT_DIR$/client/src/app/account/authService.js" />
         <option value="$PROJECT_DIR$/Readme.md" />
-        <option value="$PROJECT_DIR$/server/routes/authentication.js" />
         <option value="$PROJECT_DIR$/client/src/app/account/login/loginToolbar.tpl.html" />
         <option value="$PROJECT_DIR$/client/src/app/account/login/login.tpl.html" />
-        <option value="$PROJECT_DIR$/client/src/app/account/login/login.js" />
         <option value="$PROJECT_DIR$/server/lib/pass.js" />
+        <option value="$PROJECT_DIR$/client/src/app/account/authService.js" />
+        <option value="$PROJECT_DIR$/server/routes/authentication.js" />
+        <option value="$PROJECT_DIR$/client/src/app/account/login/login.js" />
       </list>
     </option>
   </component>
@@ -577,13 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/account/authService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="2090" selection-end="2238" vertical-scroll-proportion="0.41853034">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -591,9 +584,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/account/login/login.js">
+    <entry file="file://$PROJECT_DIR$/server/lib/pass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="24" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0">
+        <state line="67" column="46" selection-start="1493" selection-end="1493" vertical-scroll-proportion="1.3913738">
           <folding />
         </state>
       </provider>
@@ -605,16 +598,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/authentication.js">
+    <entry file="file://$PROJECT_DIR$/client/src/app/account/authService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="26" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
+        <state line="126" column="0" selection-start="4383" selection-end="4383" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/pass.js">
+    <entry file="file://$PROJECT_DIR$/server/routes/authentication.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="77" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.08626198">
+        <state line="12" column="49" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/account/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="26" selection-start="791" selection-end="791" vertical-scroll-proportion="-0.68210864">
           <folding />
         </state>
       </provider>
