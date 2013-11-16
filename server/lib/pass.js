@@ -30,11 +30,16 @@ passport.deserializeUser(function(id, done) {
 
 passport.use(new localStrategy(function(username, password, done) {
 
+    var messages = [];
+
     db.userModel.findOne({ username: username }, function(error, user) {
 
         if (error) { return done(error); }
 
-        if (!user) { return done(null, false, { message: 'Unknown user ' + username }); }
+        if (!user) {
+            messages.push('Unknown user: ' + username);
+            return done(null, false, {messages: messages });
+        }
 
         user.comparePassword(password, user, function(error, isMatch) {
 
@@ -46,8 +51,8 @@ passport.use(new localStrategy(function(username, password, done) {
 
             }
             else {
-
-                return done(null, false, { message: 'Invalid password' });
+                messages.push('Invalid password');
+                return done(null, false, { messages: messages });
 
             }
         });
