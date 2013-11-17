@@ -1,0 +1,18 @@
+<div>
+    <h1>Login</h1>
+    <form name="loginForm">
+        <label>Username
+            <input type="text" data-ng-model="user.username"/>
+        </label>
+        <label>Password
+            <input type="password" data-ng-model="user.password"/>
+        </label>
+        <button type="submit" data-ng-click="login()">Login</button>
+    </form>
+    <a href="/register">Register</a>
+
+    <br />
+    <span ng-repeat="message in messages">
+        {{message}} <br />
+    </span>
+</div>

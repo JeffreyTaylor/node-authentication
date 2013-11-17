@@ -1,6 +1,7 @@
 angular.module('app',
     [
         'ngRoute',
+        'common.directives.ensureUnique',
         'home',
         'account.login',
         'account.login.toolbar',
@@ -24,7 +25,6 @@ angular.module('app').run(['$rootScope', '$location', 'authService',
         // to do -- move to config.
         var unprotectedRoutes = ['/login', '/register'];
 
-        // to do, move somewhere else.
         var isProtectedRoute = function (location) {
 
             var isProtected = true;

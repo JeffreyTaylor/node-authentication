@@ -3,7 +3,7 @@ angular.module('account.login', [])
     .config(['$routeProvider', function ($routeProvider) {
 
         $routeProvider.when('/login', {
-            templateUrl: 'app/account/login/login.tpl.html',
+            templateUrl: 'app/modules/account/login/login.tpl.html',
             controller: 'loginController',
             resolve: {
                 user: ['authService', function (authService) {

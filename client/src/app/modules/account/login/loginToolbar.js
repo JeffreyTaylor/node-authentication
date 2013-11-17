@@ -3,7 +3,7 @@ angular.module('account.login.toolbar', [])
     .directive('loginToolbar', ['authService', function(authService) {
 
         var directive = {
-            templateUrl: 'app/account/login/loginToolbar.tpl.html',
+            templateUrl: 'app/modules/account/login/loginToolbar.tpl.html',
             restrict: 'E',
             replace: true,
             scope: true,
