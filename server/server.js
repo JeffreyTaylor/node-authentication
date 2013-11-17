@@ -54,6 +54,7 @@ app.get('/admin', pass.ensureAuthenticated, pass.ensureAdmin, restricted.admin);
 
 // JSON API
 app.post('/api/check/username', api.checkUsername);
+app.post('/api/check/email', api.checkEmail);
 
 //everything else:
 app.get('*', index.index);

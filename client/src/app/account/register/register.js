@@ -37,7 +37,10 @@ angular.module('account.register', ['account.services.register'])
 
             $scope.register = function () {
 
-                console.log($scope.newUser);
+                if ($scope.registerForm.$invalid) {
+                    console.log('invalid');
+                    return;
+                }
 
                 registerService.register($scope.newUser)
                     .then(function (result) {
@@ -48,7 +51,8 @@ angular.module('account.register', ['account.services.register'])
                         if (result && result.user) {
 
                             console.log(result);
-                            //$location.path('/');
+                            $scope.messages = ['register successful!'];
+
 
                         }
 
@@ -60,34 +64,56 @@ angular.module('account.register', ['account.services.register'])
         }])
     .directive('ensureUnique', ['$http', '$timeout', function ($http, $timeout) {
 
-        var queryInProcess = false;
+        var query = null;
 
         return {
             require: 'ngModel',
-            link: function (scope, ele, attrs, controller) {
+            link: function (scope, element, attrs, controller) {
 
-                scope.$watch(attrs.ngModel, function (value) {
-                    if (value != null && value != "") {
-                        if (queryInProcess == false) {
-                            $timeout(function () {
-                                $http({
-                                    method: 'POST',
-                                    url: '/api/check/' + attrs.ensureUnique,
-                                    data: {'value': value}
-                                }).success(function (data, status, headers, cfg) {
+                var onActionExecuted = function () {
+                    $timeout(function () {
+                        if (element.val() != null && element.val() != "") {
+                            executeQuery(element.val());
+                        }
+                        else {
+                            query = null;
+                            console.log('setting to true');
+                            controller.$setValidity('unique', true);
+                        }
+                    }, 250);
+                };
 
-                                        controller.$setValidity('unique', !data.userExists);
-                                        queryInProcess = false;
+                element.bind('keyup', onActionExecuted);
+                element.bind('blur', onActionExecuted);
 
-                                    }).error(function (data, status, headers, cfg) {
+                var executeQuery = function (value) {
 
-                                        queryInProcess = false;
+                    if (query == null) {
 
-                                    });
-                            }, 250);
+                        if (element.val() != null && element.val() != "") {
+                           query = $timeout(function () {
+                               $http({
+                                   method: 'POST',
+                                   url: '/api/check/' + attrs.name,
+                                   data: {'value': value}
+                               }).success(function (data, status, headers, cfg) {
+                                       if (element.val() != null && element.val() != "") {
+                                           controller.$setValidity('unique', !data.exists);
+                                       }
+                                       else {
+                                           controller.$setValidity('unique', true);
+                                       }
+                                       query = null;
+
+                                   }).error(function (data, status, headers, cfg) {
+
+                                       query = null;
+
+                                   });
+                            }, 100);
                         }
                     }
-                });
+                }
             }
         }
     }]);

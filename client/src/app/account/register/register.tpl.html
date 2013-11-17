@@ -7,9 +7,8 @@
                    placeholder="Username"
                    name="username"
                    data-ng-model="newUser.username"
-                   ng-minlength=3
                    ng-maxlength=20
-                   ensure-unique="username"
+                   ensure-unique
                    required="required"/>
         </label>
         <label>Email
@@ -17,6 +16,7 @@
                    placeholder="Email"
                    name="email"
                    data-ng-model="newUser.email"
+                   ensure-unique
                    required="required"/>
         </label>
         <label>Password
@@ -24,13 +24,13 @@
                    placeholder="Password"
                    name="password"
                    data-ng-model="newUser.password"
+                   ng-minlength="6"
                    required="required"/>
         </label>
         <button type="submit" data-ng-click="register()">Register</button>
 
         <div class="error" ng-show="registerForm.username.$dirty && registerForm.username.$invalid">
             <small class="error" ng-show="registerForm.username.$error.required">Please enter a username</small>
-            <small class="error" ng-show="registerForm.username.$error.minlength">Your username is required to be at least 3 characters</small>
             <small class="error" ng-show="registerForm.username.$error.maxlength">Your username cannot be longer than 20 characters</small>
             <small class="error" ng-show="registerForm.username.$error.unique">That username is taken, please try another</small>
         </div>
@@ -45,13 +45,20 @@
                    ng-show="registerForm.email.$error.email">
                 That is not a valid email. Please input a valid email.
             </small>
+            <small class="error" ng-show="registerForm.email.$error.unique">That email is associated with another account</small>
         </div>
 
-        <br />
-        <br />
-        <span>registerForm.$valid = {{registerForm.$valid}}</span><br/>
-        <span>registerForm.$error.required = {{!!registerForm.$error.required}}</span><br/>
-        <span>registerForm.$error.email = {{!!registerForm.$error.email}}</span><br/>
+        <div class="error"
+             ng-show="registerForm.password.$dirty && registerForm.password.$invalid">
+            <small class="error"
+                   ng-show="registerForm.password.$error.required">
+                Password is required.
+            </small>
+            <small class="error"
+                   ng-show="registerForm.password.$error.minlength">
+                password must be longer than 6 characters
+            </small>
+        </div>
     </form>
 
 

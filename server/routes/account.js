@@ -5,13 +5,13 @@ exports.register = function (request, response, next) {
     var messages = [];
 
     if (request.body.username == null) {
-        messages.push('username cannot be blank');
+        messages.push('invalid username');
     }
     if (request.body.email == null) {
-        messages.push('email cannot be blank');
+        messages.push('invalid email');
     }
     if (request.body.password == null) {
-        messages.push('password cannot be blank');
+        messages.push('invalid password');
     }
 
 
