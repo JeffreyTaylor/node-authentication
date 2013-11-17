@@ -62,43 +62,40 @@ angular.module('account.register', ['account.services.register'])
         }])
     .directive('ensureUnique', ['$http', '$timeout', function ($http, $timeout) {
 
-        var query = null;
+        var timeoutId = null;
 
         return {
             require: 'ngModel',
             link: function (scope, element, attrs, controller) {
 
                 var onActionExecuted = function () {
-                    $timeout(function () {
-                        if (query == null || element.val() != null && element.val() != "") {
+                    $timeout.cancel(timeoutId);
+
+                    timeoutId = $timeout(function () {
+                        if (element.val() != null && element.val() != "") {
                             executeQuery(element.val());
                         }
                         else {
-                            query = null;
-                            console.log('setting to true');
                             controller.$setValidity('unique', true);
                         }
-                    }, 250);
+                    }, 500);
+
                 };
 
                 element.on('keyup blur', onActionExecuted);
 
                 var executeQuery = function (value) {
 
-                    query = $timeout(function () {
+                    $http({
+                        method: 'POST',
+                        url: '/api/check/' + attrs.name,
+                        data: {'value': value}
 
-                        $http({
-                            method: 'POST',
-                            url: '/api/check/' + attrs.name,
-                            data: {'value': value}
+                    }).success(function (data, status, headers, cfg) {
 
-                        }).success(function (data, status, headers, cfg) {
+                            controller.$setValidity('unique', !data.exists);
 
-                                controller.$setValidity('unique', !data.exists);
-
-                            });
-                        query = null;
-                    }, 100);
+                        });
                 };
 
             }
