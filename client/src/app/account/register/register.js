@@ -16,8 +16,6 @@ angular.module('account.register', ['account.services.register'])
                 }]
             }
         });
-
-
     }])
     .controller('registerController', ['$scope', '$location', 'registerService', 'user',
         function ($scope, $location, registerService, user) {
@@ -33,7 +31,7 @@ angular.module('account.register', ['account.services.register'])
                 email: null,
                 password: null
 
-            }
+            };
 
             $scope.register = function () {
 
@@ -72,7 +70,7 @@ angular.module('account.register', ['account.services.register'])
 
                 var onActionExecuted = function () {
                     $timeout(function () {
-                        if (element.val() != null && element.val() != "") {
+                        if (query == null || element.val() != null && element.val() != "") {
                             executeQuery(element.val());
                         }
                         else {
@@ -83,37 +81,26 @@ angular.module('account.register', ['account.services.register'])
                     }, 250);
                 };
 
-                element.bind('keyup', onActionExecuted);
-                element.bind('blur', onActionExecuted);
+                element.on('keyup blur', onActionExecuted);
 
                 var executeQuery = function (value) {
 
-                    if (query == null) {
+                    query = $timeout(function () {
 
-                        if (element.val() != null && element.val() != "") {
-                           query = $timeout(function () {
-                               $http({
-                                   method: 'POST',
-                                   url: '/api/check/' + attrs.name,
-                                   data: {'value': value}
-                               }).success(function (data, status, headers, cfg) {
-                                       if (element.val() != null && element.val() != "") {
-                                           controller.$setValidity('unique', !data.exists);
-                                       }
-                                       else {
-                                           controller.$setValidity('unique', true);
-                                       }
-                                       query = null;
+                        $http({
+                            method: 'POST',
+                            url: '/api/check/' + attrs.name,
+                            data: {'value': value}
 
-                                   }).error(function (data, status, headers, cfg) {
+                        }).success(function (data, status, headers, cfg) {
 
-                                       query = null;
+                                controller.$setValidity('unique', !data.exists);
 
-                                   });
-                            }, 100);
-                        }
-                    }
-                }
+                            });
+                        query = null;
+                    }, 100);
+                };
+
             }
         }
     }]);
