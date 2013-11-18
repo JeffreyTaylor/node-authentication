@@ -63,7 +63,7 @@ angular.module('account.login', [])
                             // server returns very verbose messages
                             // about what was invalid about login request.
                             // opting here to show generic message to user.
-                            $scope.messages = ['invalid username / password.'];
+                            $scope.messages.push('invalid username / password.');
 
                         }
 
@@ -73,6 +73,12 @@ angular.module('account.login', [])
         };
 
         var validateRequest = function () {
+
+            if($scope.user == null) {
+                $scope.messages.push('username cannot be blank');
+                $scope.messages.push('password cannot be blank');
+                return;
+            }
 
             if ($scope.user.username == null || $scope.user.username == "") {
                 $scope.messages.push('username cannot be blank');

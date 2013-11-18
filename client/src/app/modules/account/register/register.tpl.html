@@ -37,7 +37,7 @@
         <div class="error"
              ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
             <small class="error"  ng-show="registerForm.email.$error.required">Your email is required.</small>
-            <small class="error" ng-show="registerForm.email.$error.email"> That is not a valid email. Please input a valid email.s</small>
+            <small class="error" ng-show="registerForm.email.$error.email"> That is not a valid email. Please input a valid email.</small>
             <small class="error" ng-show="registerForm.email.$error.unique">That email is associated with another account</small>
         </div>
 
@@ -54,5 +54,13 @@
         <span ng-repeat="message in messages">
         {{message}}
     </span>
+
+
+    <div ng-show="registerComplete">
+
+        Register Complete!
+        click <a href="/">here</a> to login
+
+    </div>
 
 </div>

@@ -2,10 +2,16 @@
     <h1>Login</h1>
     <form name="loginForm">
         <label>Username
-            <input type="text" data-ng-model="user.username"/>
+            <input type="text"
+                   placeholder="Username"
+                   data-ng-model="user.username"
+                   required="required"/>
         </label>
         <label>Password
-            <input type="password" data-ng-model="user.password"/>
+            <input type="password"
+                   placeholder="password"
+                   data-ng-model="user.password"
+                   required="required"/>
         </label>
         <button type="submit" data-ng-click="login()">Login</button>
     </form>

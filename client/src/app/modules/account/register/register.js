@@ -4,27 +4,13 @@ angular.module('account.register', ['account.services.register'])
 
         $routeProvider.when('/register', {
             templateUrl: 'app/modules/account/register/register.tpl.html',
-            controller: 'registerController',
-            resolve: {
-                user: ['authService', function (authService) {
-                    authService.getUserSession()
-                        .then(function (user) {
-
-                            return user;
-
-                        });
-                }]
-            }
+            controller: 'registerController'
         });
     }])
-    .controller('registerController', ['$scope', '$location', 'registerService', 'user',
-        function ($scope, $location, registerService, user) {
+    .controller('registerController', ['$scope', '$location', 'registerService',
+        function ($scope, $location, registerService) {
 
-            if (user != null) {
-
-                $scope.userLoggedIn = true;
-
-            }
+            $scope.registerComplete = false;
 
             $scope.register = function () {
 
@@ -50,6 +36,8 @@ angular.module('account.register', ['account.services.register'])
                             $scope.registerForm.$setPristine();
 
                             $scope.messages = ['register successful!'];
+
+                            $scope.registerComplete = true;
 
                         }
 
